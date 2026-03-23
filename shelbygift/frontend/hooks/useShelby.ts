@@ -48,7 +48,7 @@ export function useUploadMedia() {
         // Step 2: Register on-chain (wallet signs tx)
         setState({ step: "registering" });
         const payload = ShelbyBlobClient.createRegisterBlobPayload({
-          account: account.address.toString(),
+          account: account.address, // Corrected: pass AccountAddress object instead of string
           blobName: uniqueBlobName,
           blobMerkleRoot: commitments.blob_merkle_root,
           numChunksets: expectedTotalChunksets(commitments.raw_data_size),
@@ -61,6 +61,7 @@ export function useUploadMedia() {
 
         // Step 3: Upload data to Shelby RPC
         setState({ step: "uploading" });
+        if (!shelbyClient) throw new Error("ShelbyClient not initialized");
         await shelbyClient.rpc.putBlob({
           account: account.address.toString(),
           blobName: uniqueBlobName,
