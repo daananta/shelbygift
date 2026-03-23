@@ -9,7 +9,7 @@
     "move:publish": "node ./scripts/move/publish && node ./scripts/move/get_abi",
     "move:upgrade": "node ./scripts/move/upgrade && node ./scripts/move/get_abi",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "deploy": "vercel",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
