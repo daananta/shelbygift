@@ -1,0 +1,12 @@
+[package]
+name = "ShelbyGift"
+version = "1.0.0"
+authors = []
+
+[addresses]
+shelbygift = "0x5cea8ec952885dce79d7c5b1a1e3a912be7de2bbc61a04ab2502a369d8bcef01"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-framework.git", rev = "mainnet", subdir = "aptos-framework" }
+
+[dev-dependencies]
