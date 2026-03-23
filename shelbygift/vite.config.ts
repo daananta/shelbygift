@@ -7,9 +7,6 @@ import topLevelAwait from "vite-plugin-top-level-await";
 export default defineConfig({
   build: {
     outDir: "dist",
-    rollupOptions: {
-      external: ['buffer'],
-    },
   },
   server: {
     open: true,
